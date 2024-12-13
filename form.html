@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Prioridade</title>
+</head>
+<body>
+    <h2>Formulário de Prioridade</h2>
+
+    <!-- Formulário de Prioridade -->
+    <form id="formPrioridade">
+        <!-- Campo ID (Preenchido Manualmente) -->
+        <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id" placeholder="Digite o ID" required><br><br>
+
+        <!-- Grau de Prioridade -->
+        <label for="prioridade">Grau de Prioridade:</label><br>
+        <select id="prioridade" name="prioridade" required>
+            <option value="">Selecione...</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Média">Média</option>
+            <option value="Alta">Alta</option>
+        </select><br><br>
+
+        <!-- Comentário -->
+        <label for="comentario">Comentário:</label><br>
+        <textarea id="comentario" name="comentario" placeholder="Digite seu comentário" required></textarea><br><br>
+
+        <!-- Botão de Enviar -->
+        <button type="button" onclick="enviarDados()">Enviar</button>
+    </form>
+
+    <script>
+        // Função de Simulação de Envio
+        function enviarDados() {
+            const id = document.getElementById("id").value;
+            const prioridade = document.getElementById("prioridade").value;
+            const comentario = document.getElementById("comentario").value;
+
+            if (!id || !prioridade || !comentario) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Simula o envio
+            alert(`Dados enviados!\nID: ${id}\nPrioridade: ${prioridade}\nComentário: ${comentario}`);
+        }
+    </script>
+</body>
+</html>
