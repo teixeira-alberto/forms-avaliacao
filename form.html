@@ -8,31 +8,24 @@
 <body>
     <h2>Avaliar Pessoa</h2>
 
-    <!-- Formulário de Avaliação -->
     <form id="formAvaliacao">
-        <!-- ID da Pessoa (Automático) -->
         <label for="id_pessoa">ID da Pessoa:</label><br>
         <input type="text" id="id_pessoa" name="id_pessoa" readonly><br><br>
 
-        <!-- Nota -->
         <label for="nota">Nota (0-10):</label><br>
         <input type="number" id="nota" name="nota" min="0" max="10" required><br><br>
 
-        <!-- Comentário -->
         <label for="comentario">Comentário:</label><br>
         <textarea id="comentario" name="comentario" required></textarea><br><br>
 
-        <!-- Botão de Enviar -->
         <button type="button" onclick="enviarDados()">Enviar</button>
     </form>
 
     <script>
-        // Captura o ID da URL
         const urlParams = new URLSearchParams(window.location.search);
         const id_pessoa = urlParams.get('id');
         document.getElementById("id_pessoa").value = id_pessoa;
 
-        // Função Simulada de Envio
         function enviarDados() {
             const id_pessoa = document.getElementById("id_pessoa").value;
             const nota = document.getElementById("nota").value;
@@ -43,9 +36,9 @@
                 return;
             }
 
-            // Simula o Envio (sem banco)
             alert(`Dados enviados!\nID: ${id_pessoa}\nNota: ${nota}\nComentário: ${comentario}`);
         }
     </script>
 </body>
 </html>
+
